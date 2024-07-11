@@ -46,7 +46,8 @@ class MyClient(discord.Client):
                 self.call_leaderboard = []
                 self.channelID = default_channelID  # Reset to default if error
         else:
-            print("Data file not found. Using default values.")
+            print("Data file not found. Using default values and creating a new file.")
+            self.save_data()
             self.muted_ids = {12345}  # Default muted id remove if not needed
             self.call_leaderboard = []
 
